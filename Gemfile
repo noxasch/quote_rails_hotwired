@@ -58,6 +58,7 @@ group :development do
   gem 'rubocop-performance', '~> 1.19', require: false
   gem 'rubocop-rails', '~> 2.22', require: false
   gem 'rubocop-rspec', '~> 2.25', require: false
+  gem 'rubocop-yard', '~> 0.8.1', require: false
   gem 'solargraph', '~> 0.49.0', require: false
   gem 'solargraph-rails', '~> 1.1', require: false
   gem 'web-console'

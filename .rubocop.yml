@@ -3,6 +3,7 @@ require:
   - rubocop-rails
   - rubocop-performance
   - rubocop-rspec
+  - rubocop-yard
 # inherit_gem:
 #   standard: config/base.yml
 
@@ -241,10 +242,13 @@ RSpec/Rails/AvoidSetupHook: # new in 2.4
 RSpec/Rails/HaveHttpStatus: # new in 2.12
   Enabled: true
 RSpec/Rails/InferredSpecType: # new in 2.14
-  Enabled: true
+  Enabled: false
 RSpec/Rails/MinitestAssertions: # new in 2.17
-  Enabled: true
+  Enabled: false
 RSpec/Rails/NegationBeValid: # new in 2.23
   Enabled: true
 RSpec/Rails/TravelAround: # new in 2.19
   Enabled: true
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
