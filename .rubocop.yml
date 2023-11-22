@@ -250,5 +250,66 @@ RSpec/Rails/NegationBeValid: # new in 2.23
 RSpec/Rails/TravelAround: # new in 2.19
   Enabled: true
 
+
+Metrics/BlockLength:
+  Enabled: true
+Metrics/BlockNesting:
+  Enabled: true
+Metrics/CyclomaticComplexity:
+  Enabled: true
+  # Max: 6
+Metrics/AbcSize:
+  Enabled: true
+  # Max: 35
+Metrics/MethodLength:
+  Enabled: true
+  # Max: 30
+Metrics/PerceivedComplexity:
+  Enabled: true
+
+Lint/AssignmentInCondition:
+  Enabled: true
+# AutoCorrect is disable to make sure dev can use the arg during development
+Lint/UnusedMethodArgument:
+  Enabled: true
+  AutoCorrect: false
+
+Layout/ElseAlignment:
+  Enabled: true
+Layout/CaseIndentation:
+  EnforcedStyle: "end"
+Layout/EndAlignment:
+  EnforcedStyleAlignWith: variable
+Layout/BlockAlignment:
+  EnforcedStyleAlignWith: start_of_block
+Layout/MultilineMethodCallBraceLayout:
+  Enabled: false
+Layout/ClosingParenthesisIndentation:
+  Enabled: true
+Layout/FirstArrayElementIndentation:
+  EnforcedStyle: consistent
+# Commonly used screens these days easily fit more than 80 characters.
+Layout/LineLength:
+  Max: 120
+  AllowedPatterns: ['^(\s*#)']
+
+Style/ClassAndModuleChildren:
+  Enabled: false
 Style/FrozenStringLiteralComment:
   Enabled: false
+Style/NumericLiterals:
+  Enabled: true
+Style/Documentation:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Enabled: false
+RSpec/HookArgument:
+  Enabled: true
+RSpec/MultipleExpectations:
+  Enabled: true
+  Max: 5
+RSpec/NestedGroups:
+  Enabled: true
+  Max: 10
+  
