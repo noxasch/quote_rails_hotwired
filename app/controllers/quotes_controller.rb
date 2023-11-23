@@ -13,7 +13,7 @@ class QuotesController < ApplicationController
     quote.assign_attributes(quote_params)
 
     if quote.save
-      redirect quotes_path, notice: 'Quote was successfully created/'
+      redirect_to quotes_path, notice: 'Quote was successfully created/'
     else
       render :new
     end
@@ -36,7 +36,7 @@ class QuotesController < ApplicationController
   private
 
   def quotes
-    @quotes = Quote.all
+    @quotes ||= Quote.all
   end
 
   def quote
