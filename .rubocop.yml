@@ -8,7 +8,20 @@ require:
 #   standard: config/base.yml
 
 AllCops:
-    NewCops: enable
+  NewCops: enable
+  Exclude:
+    - "db/seeds/*.rb"
+    - "node_modules/**/*"
+    - "vendor/**/*"
+    - "bin/bundle"
+    - "db/schema.rb"
+    - "db/migrate/*"
+    - "documents/*"
+    - "spec/rails_helper.rb"
+    - "spec/spec_helper.rb"
+    - "lib/tasks/auto_annotate_models.rake"
+    - "config/**/*"
+    - "bin/**/*"
 Rails/ActionControllerFlashBeforeRender: # new in 2.16
   Enabled: true
 Rails/ActionControllerTestCase: # new in 2.14
