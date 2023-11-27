@@ -43,7 +43,7 @@ class QuotesController < ApplicationController
   private
 
   def quotes
-    @quotes ||= Quote.order(id: :desc)
+    @quotes ||= Quote.ordered
   end
 
   def quote
