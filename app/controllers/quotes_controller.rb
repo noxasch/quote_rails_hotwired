@@ -13,7 +13,10 @@ class QuotesController < ApplicationController
     quote.assign_attributes(quote_params)
 
     if quote.save
-      redirect_to quotes_path, notice: 'Quote was successfully created/'
+      respond_to do |format|
+        format.turbo_stream
+        format.html { redirect_to quotes_path, notice: 'Quote was successfully created.' }
+      end
     else
       render :new
     end
@@ -21,7 +24,7 @@ class QuotesController < ApplicationController
 
   def update
     if quote.update(quote_params)
-      redirect_to quotes_path, notice: 'Quote was successfully created/'
+      redirect_to quotes_path, notice: 'Quote was successfully created.'
     else
       render :new
     end
@@ -40,7 +43,7 @@ class QuotesController < ApplicationController
   private
 
   def quotes
-    @quotes ||= Quote.all
+    @quotes ||= Quote.order(id: :desc)
   end
 
   def quote
