@@ -2,7 +2,7 @@
   " rounded px-8 pt-6 pb-8 mb-4" } do |form| %>
   <% if quote.errors.any? %>
     <div class="w-full p-1 text-rose-950 rounded bg-slate-300">
-      <% quote.errors.full_messages.to_sentence.capitalize %>
+      <%= quote.errors.full_messages.to_sentence.capitalize %>
     </div>
   <% end %>
 
