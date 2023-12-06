@@ -4,9 +4,11 @@ class Quote < ApplicationRecord
   scope :ordered, -> { order(id: :desc) }
 
   # broadcast_ is syncronous by default
-  after_create_commit -> { broadcast_prepend_later_to 'quotes' }
-  after_update_commit -> { broadcast_replace_later_to 'quotes' }
-  after_destroy_commit -> { broadcast_remove_to 'quotes' }
+  # after_create_commit -> { broadcast_prepend_later_to 'quotes' }
+  # after_update_commit -> { broadcast_replace_later_to 'quotes' }
+  # after_destroy_commit -> { broadcast_remove_to 'quotes' }
+  # equivalent to
+  broadcasts_to ->(_quote) { 'quotes' }, inserts_by: :prepend
 
   # def update_quotes_list
   # broadcast_prepend_to 'quotes',
