@@ -3,14 +3,17 @@ class Quote < ApplicationRecord
 
   scope :ordered, -> { order(id: :desc) }
 
-  after_commit :update_quotes_list
+  # broadcast_ is syncronous by default
+  after_create_commit -> { broadcast_prepend_to 'quotes' }
+  after_update_commit -> { broadcast_replace_to 'quotes' }
+  after_destroy_commit -> { broadcast_remove_to 'quotes' }
 
-  private
+  # def update_quotes_list
+  # broadcast_prepend_to 'quotes',
+  #                      partial: 'quotes/quote', # default
+  #                      locals: { quote: self }, # default is self
+  #                      target: 'quotes' # default is plural
 
-  def update_quotes_list
-    broadcast_prepend_to 'quotes',
-                         partial: 'quotes/quote',
-                         locals: { quote: self },
-                         target: 'quotes'
-  end
+  # broadcast_prepend_to 'quotes' # this is already enough
+  # end
 end
