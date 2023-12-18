@@ -1,8 +1,6 @@
 require 'rails_helper'
 
-# NOTE: use systems test instead for Rails 5.1+
-# feature test doesn't enable js by default
-RSpec.describe 'Quotes', type: :feature do
+RSpec.describe 'Quotes', type: :system do
   let!(:quote) { create(:quote) }
 
   describe 'When showing a quote' do
@@ -19,7 +17,7 @@ RSpec.describe 'Quotes', type: :feature do
       visit quotes_path
       click_link 'New quote'
 
-      expect(page).to have_css('h1', text: 'New quote')
+      expect(page).to have_css('input[type=submit][value="Create Quote"]')
     end
 
     it 'Create a new quote' do

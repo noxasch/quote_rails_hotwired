@@ -63,4 +63,15 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
   config.include FactoryBot::Syntax::Methods
+
+  # config.before(:each, type: :system) do
+  #   driven_by :rack_test # rack_test by default, for performance
+  # end
+
+  config.before(:each, type: :system) do
+    driven_by :selenium_chrome_headless # selenium when we need javascript
+
+    Webdrivers::Chromedriver.required_version = '120.0.6099.71' # brave chromium version
+    Selenium::WebDriver::Chrome.path = '/Applications/Brave Browser.app/Contents/MacOS/Brave Browser'
+  end
 end
