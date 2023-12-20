@@ -1,7 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe 'Quotes', type: :system do
-  let!(:quote) { create(:quote) }
+  let!(:company) { create(:company, name: 'kpmg') }
+  let!(:accountant) { create(:user, email: 'accountant@kpmc.com', company:, password: 'password') }
+  let!(:quote) { create(:quote, company:) }
+
+  before do
+    sign_in accountant
+  end
 
   describe 'When showing a quote' do
     it 'Show a quote' do

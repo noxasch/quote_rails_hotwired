@@ -68,6 +68,10 @@ RSpec.configure do |config|
   #   driven_by :rack_test # rack_test by default, for performance
   # end
 
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include Devise::Test::ControllerHelpers, type: :view
+  config.include Devise::Test::IntegrationHelpers, type: :system
+
   config.before(:each, type: :system) do
     driven_by :selenium_chrome_headless # selenium when we need javascript
 

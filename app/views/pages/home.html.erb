@@ -1,0 +1,16 @@
+<main class="w-full pr-1 pl-1 mx-auto">
+  <h1>Quote editor</h1>
+  <p>A blazing fast quote editor built with Hotwire</p>
+
+  <% if user_signed_in? %>
+    <%= link_to "View quotes", quotes_path, class: "inline-flex items-center rounded-md bg-indigo-600 px-3" \
+        " hover:cursor-pointer" \
+        " py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline" \
+        " focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" %>
+  <% else %>
+    <%= link_to "Sign in", new_user_session_path, class: "inline-flex items-center rounded-md bg-indigo-600 px-3" \
+        " hover:cursor-pointer" \
+        " py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline" \
+        " focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" %>
+  <% end %>
+</main>

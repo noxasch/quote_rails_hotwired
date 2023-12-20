@@ -10,7 +10,7 @@ class QuotesController < ApplicationController
   def edit; end
 
   def create
-    quote.assign_attributes(quote_params)
+    quote.assign_attributes(**quote_params, company: current_company)
 
     if quote.save
       respond_to do |format|
@@ -43,14 +43,14 @@ class QuotesController < ApplicationController
   private
 
   def quotes
-    @quotes ||= Quote.ordered
+    @quotes ||= current_company.quotes.ordered
   end
 
   def quote
     @quote ||= if %w[new create].include?(action_name)
       Quote.new
     else
-      Quote.find(params[:id])
+      current_company.quotes.find(params[:id])
     end
   end
 

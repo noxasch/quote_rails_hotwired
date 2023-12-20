@@ -1,9 +1,9 @@
 FactoryBot.define do
   factory :user do
-    sequence(:name) do |n|
-      "#{n.ordinalize} Company"
-    end
-    association :company
+    # sequence(:name) do |n|
+    #   "#{n.ordinalize} Company"
+    # end
+    company
 
     # trait :accountant do
     #   email { "accountant@kpmg.com"}
