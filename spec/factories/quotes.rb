@@ -3,5 +3,6 @@ FactoryBot.define do
     sequence(:name) do |n|
       "#{n.ordinalize} Quote"
     end
+    association :company
   end
 end
