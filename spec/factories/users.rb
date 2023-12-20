@@ -4,5 +4,23 @@ FactoryBot.define do
       "#{n.ordinalize} Company"
     end
     association :company
+
+    # trait :accountant do
+    #   email { "accountant@kpmg.com"}
+    #   pasword { "password" }
+    #   association :company, name: "kpmg"
+    # end
+
+    # trait :manager do
+    #   email { "manager@kpmg.com"}
+    #   pasword { "password" }
+    #   association :company, name: "kpmg"
+    # end
+
+    # trait :eavesdropper do
+    #   email { "eavesdropper@pwc.com"}
+    #   pasword { "password" }
+    #   association :company, name: "pwc"
+    # end
   end
 end
