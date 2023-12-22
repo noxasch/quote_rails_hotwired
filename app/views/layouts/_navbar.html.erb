@@ -1,11 +1,11 @@
 <header class="bg-white border-gray-200 px-4 lg:px-6 py-2.5">
   <nav class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl" aria-label="Global">
     <% if user_signed_in? %>
+      <div class="self-center text-xl font-semibold whitespace-nowrap">
+        <%= current_company.name %>
+      </div>
       <div class="lg:flex lg:flex-1 lg:justify-end">
-        <div class="navbar__brand">
-          <%= current_company.name %>
-        </div>
-        <div class="navbar__name">
+        <div class="text-gray-800 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none">
           <%= current_user.name %>
         </div>
         <%= button_to "Sign out",
@@ -16,6 +16,9 @@
                       "focus-visible:outline-offset-2 focus-visible:outline-indigo-600" %>
       </div> 
     <% else %>
+      <div class="self-center text-xl font-semibold whitespace-nowrap">
+        Quote Editor
+      </div>
       <div class="lg:flex lg:flex-1 lg:justify-end">
         <%# <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Sign in <span aria-hidden="true">&rarr;</span></a> %>
         <%= link_to "Sign in",
