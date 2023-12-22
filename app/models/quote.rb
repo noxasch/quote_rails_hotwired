@@ -12,7 +12,8 @@ class Quote < ApplicationRecord
   # after_update_commit -> { broadcast_replace_later_to 'quotes' }
   # after_destroy_commit -> { broadcast_remove_to 'quotes' }
   # equivalent to
-  broadcasts_to ->(_quote) { 'quotes' }, inserts_by: :prepend
+  # broadcasts_to ->(_quote) { 'quotes' }, inserts_by: :prepend
+  broadcasts_to ->(quote) { [quote.company, 'quotes'] }, inserts_by: :prepend # scope the channel broadcast
 
   # def update_quotes_list
   # broadcast_prepend_to 'quotes',
