@@ -2,4 +2,4 @@
 
 <%= turbo_stream.update Quote.new, "" %> <%# clear form and remove new  %>
 
-<%= turbo_stream.prepend "flash", partial: "layouts/flash" %>
+<%= turbo_render_flash %>
