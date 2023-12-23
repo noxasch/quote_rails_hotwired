@@ -18,13 +18,13 @@ class QuotesController < ApplicationController
         format.html { redirect_to quotes_path, notice: 'Quote was successfully created.' }
       end
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
   def update
     if quote.update(quote_params)
-      redirect_to quotes_path, notice: 'Quote was successfully created.'
+      redirect_to quotes_path, notice: 'Quote was successfully updated.'
     else
       render :new
     end
