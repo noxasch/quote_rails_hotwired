@@ -1,3 +1,9 @@
 <%= turbo_stream.remove quote %>
 
 <%= turbo_render_flash %>
+
+<% unless current_company.quotes.exists? %>
+  <%= turbo_stream.update Quote.new do %>
+    <%= render "quotes/empty" %>
+  <% end %>
+<% end %>
