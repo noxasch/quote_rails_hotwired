@@ -13,13 +13,15 @@
     %>
   </div>
 
-  <%= turbo_frame_tag Quote.new do %>
-    <% if quotes.none? %>
-      <%= render "quotes/empty" %>
-    <% end %>
-  <% end %>
+  <%= turbo_frame_tag Quote.new %>
+  <%#= turbo_frame_tag Quote.new do %>
+    <%# if quotes.none? %>
+      <%#= render "quotes/empty" %>
+    <%# end %>
+  <%# end %>
 
   <%= turbo_frame_tag "quotes" do %>
+    <%= render "quotes/empty" %>
     <%= render quotes %>
   <% end %>
 </main>
