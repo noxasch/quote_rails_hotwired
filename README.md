@@ -1,5 +1,7 @@
 # README
 
+This codebase is source from <a href="https://www.hotrails.dev/turbo-rails">hotrails.dev/turbo-rails</a>  tutorial with some adjustment like using tailwindcss instead of scss. Rspec instead of minitest.
+
 ## VSCode extensions
 - [Ruby LSP](Shopify.ruby-lsp)
 - [solargraph](castwide.solargraph)
