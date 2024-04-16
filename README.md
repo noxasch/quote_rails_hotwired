@@ -23,6 +23,10 @@ bin/setup
 bin/dev
 ```
 
+## System test
+1. update chromium version accordingly in `spec/rails_helper.rb`
+2. Run `bundle exec rspec`
+
 ## ERD
 
 ![](https://www.plantuml.com/plantuml/dsvg/TOyz2iCm38Ltdy9xoHq2xLBeqg6p4R46WIMdZZo4f7SliJ4X_TdavqyFVVsaa3HpC2XAEjjpv15ajekn9ol0Q5xjwp5XgZaoKDY6eTAE_8xTSrJSz_zXDnAyAl856kr12_tS2dwonrQFqv1eL8fIrw3Gsvo5r8s9XW864dIaoCv3QpPDT5sxBYv5xYEh9gRwrEXmjTaVtu3fKNpcy0O0)

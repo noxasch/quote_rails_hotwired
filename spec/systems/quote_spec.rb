@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Quotes', type: :system do
   let!(:company) { create(:company, name: 'kpmg') }
-  let!(:accountant) { create(:user, email: 'accountant@kpmc.com', company:, password: 'password') }
+  let!(:accountant) { create(:user, email: 'accountant@kpmg.com', company:, password: 'password') }
   let!(:quote) { create(:quote, company:) }
 
   before do

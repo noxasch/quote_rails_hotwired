@@ -75,7 +75,7 @@ RSpec.configure do |config|
   config.before(:each, type: :system) do
     driven_by :selenium_chrome_headless # selenium when we need javascript
 
-    Webdrivers::Chromedriver.required_version = '120.0.6099.71' # brave chromium version
+    Webdrivers::Chromedriver.required_version = '123.0.6312.122' # brave chromium version
     Selenium::WebDriver::Chrome.path = '/Applications/Brave Browser.app/Contents/MacOS/Brave Browser'
   end
 end
